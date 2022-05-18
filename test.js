@@ -47,7 +47,7 @@
 // // 객체 형태가 아니여서 객체임
 // // console.dir(memberOne);
 
-// const test = new Date();
+const test = new Date();
 // // console.dir(test.getHours()); // * 시간이 나옴
 
 // function ampm(hour,msg){
