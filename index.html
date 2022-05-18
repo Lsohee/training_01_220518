@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="items-1">1</div>
+    <div id="items-2">2</div>
+    <div id="items-3">3</div>
+    <div id="items-4">4</div>
+    <div id="items-5">5</div>
+    <div id="items-6">6</div>
+    <div id="items-7">7</div>
+    <div id="items-8">8</div>
+    <div id="items-9">9</div>
+    <button style="color : black;">click</button>
+  </div>
+  <script>
+    const root = document.getElementById("root");
+    const btn = root.querySelector("button")
+    btn.style.height= "50px"
+    console.log(root);
+    root.style.width = "100vw";
+    root.style.height= "100vh";
+    root.style.border = "1px solid black"
+    root.style.display = "flex"
+    root.style.justifyContent = "center"
+    root.style.alignItems = "center"
+    const items = root.children 
+    // console.log(items);
+    const allItems = Array.from(items);
+    console.log(allItems);
+    let i = 0;
+    
+    
+    btn.addEventListener('click',function(){
+      // console.log("꿈이 아파 잠들지 못하는 밤")
+      i++
+      console.log(i);
+        let remain = i%2
+        // console.log(remain);
+        let movement = {
+          transform: "rotate(180deg)",
+          // transform: "top:100px"
+          // top:"100px"
+        }
+        // let Timming = {
+        //   duration :1000,
+        // }
+        
+        if(remain===0){
+          allItems[i].style.color = "red";
+          allItems[i].animate(movement,2000);
+        }else if (remain === 1){
+          allItems[i].style.color = "blue";
+        }
+        //애니메이션이 안됨...색깔 변화로 식별이 된다는 것은 확인
+
+    })
+    
+    
+
+
+    
+  </script>
+  
+  <!-- array.from -->
+</body>
+</html>
