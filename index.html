@@ -17,11 +17,11 @@
     <div id="items-7">7</div>
     <div id="items-8">8</div>
     <div id="items-9">9</div>
-    <button style="color : black;">click</button>
   </div>
+  <button>click</button>
   <script>
     const root = document.getElementById("root");
-    const btn = root.querySelector("button")
+    const btn = document.querySelector("button")
     btn.style.height= "50px"
     console.log(root);
     root.style.width = "100vw";
@@ -43,9 +43,10 @@
       console.log(i);
         let remain = i%2
         // console.log(remain);
-        let movement = {
-          transform: "rotate(180deg)",
-          // transform: "top:100px"
+        let movementUp = {
+          // transform: "rotate(180deg)"
+          transform:"translateY(0px)",
+          transform:"translateY(-200px)"
           // top:"100px"
         }
         // let Timming = {
@@ -54,12 +55,22 @@
         
         if(remain===0){
           allItems[i].style.color = "red";
-          allItems[i].animate(movement,2000);
+          allItems[i].animate(movementUp,2000);
         }else if (remain === 1){
+          allItems[i].animate
+          ([ 
+          {transform:"translateY(0px)"},
+          {transform:"translateY(200px)"}
+          ],2000);
           allItems[i].style.color = "blue";
         }
-        //애니메이션이 안됨...색깔 변화로 식별이 된다는 것은 확인
-        // <!-- todo 다음 식별은 배열 메소드를 활용해서 해볼것
+        //애니메이션이 안됨...색깔 변화로 식별이 된다는 것은 확인 -> 해결
+        // 애니메이션을 다른데 두고 다른 요소에 애니매이션이 들어가기를 바라면 어떡해 
+        // 애니메이션 중 위치가 바뀌는 속성 찾기
+        
+        // <!-- todo 다음 식별은 배열 메소드를 활용해서 해볼것-->
+        
+        
 
     })
     
